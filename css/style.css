@@ -1,4 +1,6 @@
-/* Reset */
+/* =========================================================
+   RESET & BASE
+========================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -11,20 +13,28 @@ body {
     color: #e2e8f0;
 }
 
-/* Container */
+/* =========================================================
+   GLOBAL SECTION SPACING SYSTEM (KEY FIX)
+========================================================= */
+section {
+    padding: 100px 20px;
+}
+
+section+section {
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 .container {
     max-width: 700px;
-    padding: 100px 20px;
     margin: 0 auto;
 }
 
-/* Hero */
-.hero-content {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
+/* =========================================================
+   HERO
+========================================================= */
 .hero {
     position: relative;
     display: flex;
@@ -32,7 +42,13 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #0f172a;
-    font-family: 'Poppins', sans-serif;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: auto;
 }
 
 .hero .greeting {
@@ -60,41 +76,22 @@ body {
     max-width: 500px;
 }
 
-/* Buttons */
-.btn-group {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 40px;
+/* =========================================================
+   LOGO & SOCIAL
+========================================================= */
+header .logo {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #7dd3fc;
 }
 
-.btn {
-    padding: 12px 22px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s ease;
+header .logo .dot {
+    color: #7c3aedbf;
 }
 
-.btn.solid {
-    background: #7c3aed;
-    color: white;
-}
-
-.btn.solid:hover {
-    background: #6d28d9;
-}
-
-.btn.outline {
-    border: 2px solid #7c3aed;
-    color: #7c3aed;
-}
-
-.btn.outline:hover {
-    background: #7c3aed;
-    color: white;
-}
-
-/* Social Icons */
 .social {
     display: flex;
     flex-direction: column;
@@ -108,31 +105,55 @@ body {
 }
 
 .social a:hover {
-    color: white;
+    color: #fff;
 }
 
-/* Logo positioning */
-header .logo {
-    position: absolute;
-    top: 20px;
-    left: 80px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    color: #7dd3fc;
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn-group {
+    display: flex;
+    gap: 15px;
 }
 
-header .logo .dot {
-    color: #7c3aedbf;
-    font-size: 18px;
-    font-weight: bold;
+.btn-group.center {
+    justify-content: center;
+    margin-top: 50px;
 }
 
-/* About SECTION */
+.btn {
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.btn.solid {
+    background: #7c3aed;
+    color: #fff;
+}
+
+.btn.solid:hover {
+    background: #6d28d9;
+}
+
+.btn.outline {
+    border: 2px solid #7c3aed;
+    color: #7c3aed;
+}
+
+.btn.outline:hover {
+    background: #7c3aed;
+    color: #fff;
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
 .about-modern {
-    padding: 100px 20px;
     background: #0f172a;
-    color: #e2e8f0;
     font-family: 'Inter', sans-serif;
 }
 
@@ -186,154 +207,13 @@ header .logo .dot {
     font-weight: 600;
 }
 
-.resume-btn {
-    background: transparent;
-    color: #38bdf8;
-    border: 2px solid #38bdf8;
-    padding: 12px 24px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.resume-btn:hover {
-    background-color: #38bdf8;
-    color: #0f172a;
-}
-
-.resume-btn .icon {
-    animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
-}
-
-/* TECHNOLOGIES SECTION */
-.technologies-section {
-    background-color: #0f172a;
-    color: #f9fafb;
-    text-align: center;
-}
-
-.technologies-section .container {
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-.technologies-section h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.technologies-section p {
-    color: #38bdf8;
-    margin-bottom: 2rem;
-}
-
-/* Jika menggunakan Swiper (carousel) */
-.tech-swiper {
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* agar pagination di tengah */
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.swiper-slide img {
-    height: 200px !important;
-    transition: transform 0.3s ease;
-}
-
-.swiper-slide img:hover {
-    transform: scale(1.1);
-}
-
-.swiper-wrapper {
-    margin-bottom: 50px;
-    /* jarak antara gambar dan dots */
-}
-
-/* Bullet Swiper */
-.swiper-pagination {
-    margin-top: 10px;
-}
-
-.swiper-pagination-bullet {
-    background: #38bdf8;
-    opacity: 0.5;
-    margin: 0 4px;
-}
-
-.swiper-pagination-bullet-active {
-    opacity: 1;
-}
-
-/* Jika tidak pakai swiper, tapi pakai scroll container biasa */
-.technologies-section .tech-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
-    gap: 30px;
-    justify-content: center;
-}
-
-.technologies-section .tech-scroll-container img {
-    height: 100px;
-    margin: 0 20px;
-    transition: transform 0.3s ease;
-    scroll-snap-align: center;
-}
-
-.technologies-section .tech-scroll-container img:hover {
-    transform: scale(1.1);
-}
-
-
-.footer {
-    background-color: #0f172a;
-    color: #f9fafb;
-    padding: 2rem 1rem 1rem;
-    font-family: 'Inter', sans-serif;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 1.5rem;
-    font-size: 0.875rem;
-    color: #64748b;
-}
-
-/* Projects Section */
+/* =========================================================
+   PROJECTS
+========================================================= */
 .projects-section {
-    text-align: center;
-    /* padding: 80px 20px; */
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 80px;
     background-color: #0f172a;
-    /* warna gelap */
     color: #fff;
+    text-align: center;
 }
 
 .projects-section h2 {
@@ -345,7 +225,29 @@ header .logo .dot {
 .projects-section .subtitle {
     color: #38bdf8;
     margin-bottom: 50px;
-    font-size: 1rem;
+}
+
+.project-group {
+    margin-top: 80px;
+    padding-bottom: 50px;
+
+}
+
+.project-group-title {
+    font-size: 1.6rem;
+    color: #c084fc;
+    margin-bottom: 10px;
+}
+
+.project-group-title.personal {
+    font-size: 1.6rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.project-group-desc {
+    color: #94a3b8;
+    margin-bottom: 40px;
 }
 
 .projects-grid {
@@ -363,93 +265,279 @@ header .logo .dot {
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     min-height: 300px;
     transition: transform 0.3s ease;
+    z-index: 3;
+}
+
+.card-wrapper {
+    padding: 12px;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
 }
 
-.project-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-    font-weight: bold;
+
+.project-card.enterprise {
+    position: relative;
+    background: radial-gradient(120% 120% at 10% 0%,
+            #1e293b 0%,
+            #0f172a 60%);
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    transition: all 0.35s ease;
 }
 
-.project-card .by {
-    font-size: 0.9rem;
-    color: #38bdf8;
+.project-card.enterprise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg,
+            transparent,
+            rgba(124, 58, 237, 0.6),
+            transparent);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.project-card.enterprise:hover {
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(124, 58, 237, 0.35);
+}
+
+.project-card.enterprise:hover::before {
+    opacity: 1;
+}
+
+.enterprise-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.personal-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.enterprise-swiper .project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-swiper .project-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card.enterprise .description {
+    min-height: 110px;
+}
+
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 14px;
 }
 
+.card-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+.card-badge {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(124, 58, 237, 0.15);
+    color: #c084fc;
+    font-weight: 600;
+}
+
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn.ghost {
+    background: rgba(124, 58, 237, 0.12);
+    border: 1px solid rgba(124, 58, 237, 0.35);
+    color: #c084fc;
+}
+
+.btn.ghost:hover {
+    background: rgba(124, 58, 237, 0.25);
+}
+
+
 .project-card .description {
-    flex-grow: 1;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+
+
+.project-card.personal {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 1px solid rgba(58, 136, 237, 0.3);
+}
+
+
+/* .project-card.enterprise:hover {
+    border-color: #7c3aed;
+} */
+
+.project-card.personal:hover {
+    border-color: #38bdf8;
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.project-card .description {
     font-size: 0.95rem;
     color: #cbd5e1;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.btn-group {
+/* Tech tags */
+.tech-tags {
     display: flex;
-    gap: 15px;
-    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
 }
 
-.btn-group.center {
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.btn {
-    padding: 12px 22px;
-    border-radius: 6px;
+.tech-tags span {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
     font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s ease;
-    display: inline-block;
 }
 
-.btn.solid {
-    background: #7c3aed;
-    color: white;
+.tech-tags.personal span {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(124, 58, 237, 0.12);
+    color: #c084fc;
+    font-weight: 600;
 }
 
-.btn.solid:hover {
-    background: #6d28d9;
+.btn.ghost.personal {
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(58, 115, 237, 0.35);
+    color: #38bdf8;
 }
 
-.btn.outline {
-    border: 2px solid #7c3aed;
-    color: #7c3aed;
+.btn.ghost.personal:hover {
+    background: rgba(58, 142, 237, 0.25);
 }
 
-.btn.outline:hover {
-    background: #7c3aed;
-    color: white;
+/* Project status */
+.project-status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 999px;
+    align-self: flex-start;
 }
 
+.project-status.in-progress {
+    background: rgba(124, 58, 237, 0.15);
+    color: #c084fc;
+}
+
+.project-status.personal {
+    background: rgba(14, 165, 233, 0.15);
+    color: #38bdf8;
+}
+
+/* =========================================================
+   TECHNOLOGIES
+========================================================= */
+.technologies-section {
+    background-color: #0f172a;
+    color: #f9fafb;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.technologies-section p {
+    color: #38bdf8;
+    margin-bottom: 12px;
+}
+
+.technologies-section h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+
+.technologies-section .container {
+    max-width: 960px;
+}
+
+.tech-swiper {
+    padding: 2.5rem 0 3.5rem;
+}
+
+.tech-swiper .swiper-pagination {
+    bottom: 0 !important;
+    margin-top: 20px;
+    position: relative;
+}
+
+.swiper-slide img {
+    height: 200px !important;
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide img:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
 .contact-section {
-    padding: 4rem 2rem;
     text-align: center;
 }
 
 .contact-section .section-title {
     font-size: 2.2rem;
-    font-weight: 700;
     margin-bottom: 1rem;
     color: #c084fc;
-    /* ungu soft */
 }
 
 .contact-section .section-description {
     max-width: 600px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 2rem;
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #e2e8f0;
 }
 
 .contact-form {
@@ -463,36 +551,359 @@ header .logo .dot {
 .contact-form input,
 .contact-form textarea {
     padding: 12px 16px;
-    border: 1px solid #94a3b8;
     border-radius: 6px;
-    font-size: 1rem;
+    border: 1px solid #94a3b8;
     background-color: #334155;
     color: #f1f5f9;
-    font-family: inherit;
-    resize: none;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #c084fc;
-    background-color: #475569;
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+    background-color: #0f172a;
+    padding: 2rem 1rem 1rem;
 }
 
-.contact-form .btn.solid {
-    align-self: center;
-    padding: 12px 24px;
+.footer-bottom {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+/* ===============================
+   PROJECT MODAL
+================================= */
+.project-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.project-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 720px;
+    max-height: 85vh;
+    padding: 36px;
+    overflow-y: auto;
+
+    background: radial-gradient(120% 120% at 10% 0%,
+            #1e293b 0%,
+            #0f172a 65%);
+
+    border-radius: 20px;
+    border: 1px solid rgba(124, 58, 237, 0.35);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        inset 0 0 0 1px rgba(124, 58, 237, 0.15);
+}
+
+.modal-header {
+    margin-bottom: 32px;
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+.modal-subtitle {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: #38bdf8;
+}
+
+.modal-section {
+    margin-bottom: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal-section:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.modal-section h4 {
     font-size: 1rem;
-    background: #7c3aed;
+    color: #c084fc;
+    margin-bottom: 10px;
+}
+
+.modal-section p,
+.modal-section li {
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.close-modal {
+    position: sticky;
+    float: right;
+    top: 5px;
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: #c084fc;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.close-modal:hover {
+    background: rgba(124, 58, 237, 0.25);
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            rgba(124, 58, 237, 0.6),
+            rgba(56, 189, 248, 0.6));
+    border-radius: 999px;
+}
+
+.modal-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(124, 58, 237, 0.6) transparent;
+}
+
+/* ===== MODAL IMAGE GALLERY ===== */
+
+.modal-gallery {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+}
+
+.modal-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.modal-gallery::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.modal-image-wrapper {
+    cursor: pointer;
+    text-align: center;
+}
+
+.modal-gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-image-wrapper {
+    min-width: 220px;
+    max-width: 220px;
+    scroll-snap-align: start;
+    cursor: pointer;
+}
+
+.modal-image {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.modal-gallery::after {
+    content: "↔ Swipe";
+    font-size: 11px;
+    opacity: 0.5;
+    position: sticky;
+    right: 8px;
+    align-self: center;
+    margin-left: auto;
+}
+
+.image-caption {
+    margin-top: 6px;
+    font-size: 11px;
+    opacity: 0.85;
+    text-align: center;
+}
+
+/* ===== IMAGE VIEWER ===== */
+.image-viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.image-viewer.active {
+    display: flex;
+}
+
+.viewer-content {
+    text-align: center;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.viewer-content img {
+    max-width: 100%;
+    max-height: 75vh;
+    border-radius: 10px;
+}
+
+#viewerTitle {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.viewer-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+    background: none;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
 
-.contact-form .btn.solid:hover {
-    background: #6d28d9;
+.viewer-nav {
+    position: fixed;
+    top: 50%;
+    font-size: 40px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.viewer-nav.prev {
+    left: 20px;
+}
+
+.viewer-nav.next {
+    right: 20px;
+}
+
+/* ===== REFERENCES ===== */
+.modal-references {
+    display: grid;
+    gap: 14px;
+}
+
+.reference-card {
+    display: flex;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.reference-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.ref-icon {
+    font-size: 26px;
+    color: #38bdf8;
+    min-width: 32px;
+}
+
+.ref-content h5 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ref-content p {
+    margin: 4px 0 6px;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.ref-content a {
+    font-size: 13px;
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.ref-content a:hover {
+    text-decoration: underline;
+}
+
+/* ===============================
+   FIX PAGINATION POSITION
+================================ */
+.enterprise-swiper {
+    padding-bottom: 60px;
+    /* ruang untuk dots */
+}
+
+.personal-swiper {
+    padding-bottom: 60px;
+    /* ruang untuk dots */
+}
+
+.enterprise-swiper .swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+}
+
+.personal-swiper .swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+}
+
+
+.enterprise-swiper .swiper-pagination-bullet {
+    background: #64748b;
+    opacity: 0.6;
+}
+
+.personal-swiper .swiper-pagination-bullet {
+    background: #64748b;
+    opacity: 0.6;
+}
+
+.enterprise-swiper .swiper-pagination-bullet-active {
+    background: #7c3aed;
+    opacity: 1;
+}
+
+.personal-swiper .swiper-pagination-bullet-active {
+    background: #38bdf8;
+    opacity: 1;
 }

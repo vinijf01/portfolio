@@ -3,28 +3,47 @@
 const projectData = {
     sonarqube: {
         title: "SonarQube Custom Java Rules",
-        subtitle: "Custom static analysis for internal code standards",
-        problem: "Default SonarQube Java rules were not sufficient to cover internal coding standards, especially related to concurrency practices such as extending Thread directly.This made certain risky patterns pass code review unnoticed.",
-        solution: "Developed a custom SonarQube plugin using the SonarQube Plugin API and Java AST to detect specific anti-patterns. The custom rules were packaged as a plugin, installed on the SonarQube server, and integrated into Quality Profiles so that issues appear both in SonarQube Web UI and IDE via SonarLint.",
+        subtitle: "Building custom static analysis rules using SonarQube Plugin API",
+        problem: "SonarQube provides a comprehensive set of built-in Java rules, but developers often need to understand how static analysis works internally or experiment with custom rules tailored to specific learning goals or project conventions. Without building custom rules, it is difficult to explore how code patterns are detected and how rule engines operate under the hood.",
+        solution: "Developed a custom SonarQube plugin using the SonarQube Plugin API and Java AST to demonstrate how custom static analysis rules can be created, registered, and executed. The rules were packaged as a plugin, deployed to a SonarQube server, and activated through Quality Profiles so that detected issues appear both in the SonarQube Web UI and in the IDE via SonarLint.",
         tasks: [
-            "Designed custom Java rules using SonarQube Java AST (IssuableSubscriptionVisitor)",
-            "Implemented custom rule repository and rule registration",
-            "Packaged and deployed SonarQube plugin (.jar) to the server",
-            "Activated rules in Quality Profiles and bound them to projects",
-            "Verified issue detection via Maven analysis and SonarLint IDE integration"
+            "Designed multiple custom Java rules using SonarQube Java AST with IssuableSubscriptionVisitor",
+            "Implemented custom rule repository and rule metadata definition",
+            "Packaged and deployed the custom SonarQube plugin as a JAR file",
+            "Activated custom rules in Quality Profiles and bound them to analyzed projects",
+            "Verified issue detection through Maven analysis and SonarLint IDE integration"
         ],
-        tech: ["Java", "SonarQube Plugin API", "Static Code Analysis", "Maven"],
+        tech: [
+            "Java",
+            "SonarQube Plugin API",
+            "Java AST",
+            "Static Code Analysis",
+            "Maven"
+        ],
+
         links: {
             github: "https://github.com/vinijf01/SonarQube-Custom-Java-Rules.git",
             docs: "https://github.com/vinijf01/SonarQube-Custom-Java-Rules#readme"
         },
-        images: [
-            { src: "images/projects/sonarqube/CustomJavaRules.jpg", title: "Custom Java Rules Registered in Sonarqube." },
-            { src: "images/projects/sonarqube/CustomRuleDefinition.jpg", title: "Custom Rule Definition and Metadata Configuration." },
-            { src: "images/projects/sonarqube/AnalysisIntellij.jpg", title: "Static Code Analysis Issue Detected by Custome Rule." },
-            { src: "images/projects/sonarqube/ReportSonarqubeAnalysis.jpg", title: "Issue Reported by Custom Rule in Sonarqube Analysis." }
-        ]
 
+        images: [
+            {
+                src: "images/projects/sonarqube/CustomJavaRules.jpg",
+                title: "Custom Java rules registered in the SonarQube rule repository"
+            },
+            {
+                src: "images/projects/sonarqube/CustomRuleDefinition.jpg",
+                title: "Custom rule definition and metadata configuration"
+            },
+            {
+                src: "images/projects/sonarqube/AnalysisIntellij.jpg",
+                title: "Static code analysis issue detected in IntelliJ via SonarLint"
+            },
+            {
+                src: "images/projects/sonarqube/ReportSonarqubeAnalysis.jpg",
+                title: "Issues reported by custom rules in SonarQube analysis results"
+            }
+        ]
     },
     nifi_sap: {
         title: "Apache NiFi Custom Processor – SAP BAPI Integration (Simulated)",

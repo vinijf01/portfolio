@@ -114,10 +114,10 @@ const projectData = {
             docs: "https://github.com/vinijf01/Spring-Boot-Cache-L2-and-Redis#readme"
         },
         images: [
-            { src: "images/projects/cache-l2/docker-setup.png", title: "Containerized Infrastructure (PostgreSQL & Redis)." },
-            { src: "images/projects/cache-l2/hibernate-sql-logs.png", title: "SQL Log Analysis: First Hit vs Cache Hit." },
-            { src: "images/projects/cache-l2/redis-cli-proof.png", title: "Redis CLI Verification: Distributed Cache State." },
-            { src: "images/projects/cache-l2/project-structure.png", title: "Project Architecture & Configuration." }
+            { src: "images/projects/cache_l2/hibernate_l2_cache_hit_verification.png", title: "Hibernate L2 Cache Hit Verification." },
+            { src: "images/projects/cache_l2/cache_state_in_redis.png", title: "Distributed Cache State in Redis." },
+            { src: "images/projects/cache_l2/redis-cli-proof.png", title: "Redis CLI Verification: Distributed Cache State." },
+            { src: "images/projects/cache_l2/project-structure.png", title: "Project Architecture & Configuration." }
         ]
     },
     dss: {

@@ -82,6 +82,44 @@ const projectData = {
             { src: "images/projects/sap-nifi/ConnectionFailure.png", title: "NiFi Bulletin Board – SAP Endpoint Connection Failure." }
         ]
     },
+    cache_l2: {
+        title: "Distributed caching PoC: Spring Boot & Redis",
+        subtitle: "R&D on Hibernate Second-Level Cache for performance optimization",
+        problem: "In high-traffic applications, redudant database queries for frequently accessed data create significant performance bottlenecks. "
+            + "Standard L1 (Local) caching is limited to a single application instance, which leads to data inconsistency "
+            + "and inefficient resource usegae when the application is scaled horizontally across multiple nodes.",
+        solution: "This Proof of Concept (PoC) explores a distributed caching strategy by integrating Hibernate Second-Level cache with Redis. "
+            + "By using a centralized cache provider, this research demonstrates how to maintain data consistency across "
+            + "all application instances while drastically reducing direct database hits and improving overall system response time.",
+
+        tasks: [
+            "Researched and implemented Redisson as the Hibernate Region Factory provider",
+            "Configured Hibernate second-Level (L2) Cache and Query cache for optimized data retrival",
+            "Applied 'READ_WRITE' cache concurrency strategy to balance performance and data integrity",
+            "Orchestrated a distributed environment using Docker Compose with PostgreSQL and Redis containers",
+            "Validated cache hits and misses through SQL log analysis and Redis CLI monitoring",
+            "Documented the impact of distributed caching on database load and application scalability"
+        ],
+        tech: [
+            "Java",
+            "Spring Boot",
+            "Hibernate",
+            "Redis",
+            "Redisson",
+            "PostgreSQL",
+            "Docker"
+        ],
+        links: {
+            github: "https://github.com/vinijf01/Spring-Boot-Cache-L2-and-Redis.git",
+            docs: "https://github.com/vinijf01/Spring-Boot-Cache-L2-and-Redis#readme"
+        },
+        images: [
+            { src: "images/projects/cache-l2/docker-setup.png", title: "Containerized Infrastructure (PostgreSQL & Redis)." },
+            { src: "images/projects/cache-l2/hibernate-sql-logs.png", title: "SQL Log Analysis: First Hit vs Cache Hit." },
+            { src: "images/projects/cache-l2/redis-cli-proof.png", title: "Redis CLI Verification: Distributed Cache State." },
+            { src: "images/projects/cache-l2/project-structure.png", title: "Project Architecture & Configuration." }
+        ]
+    },
     dss: {
         title: "Decision Support System for Study Program Selection",
         subtitle: "An academic decision support system using AHP and TOPSIS methods",

@@ -84,17 +84,17 @@ const projectData = {
     },
     cache_l2: {
         title: "Distributed caching PoC: Spring Boot & Redis",
-        subtitle: "R&D on Hibernate Second-Level Cache for performance optimization",
-        problem: "In high-traffic applications, redudant database queries for frequently accessed data create significant performance bottlenecks. "
+        subtitle: "R&D on Hibernate Second-Level (L2) Cache for performance optimization",
+        problem: "In high-traffic applications, redundant database queries for frequently accessed data create significant performance bottlenecks. "
             + "Standard L1 (Local) caching is limited to a single application instance, which leads to data inconsistency "
-            + "and inefficient resource usegae when the application is scaled horizontally across multiple nodes.",
+            + "and inefficient resource usage when the application is scaled horizontally across multiple nodes.",
         solution: "This Proof of Concept (PoC) explores a distributed caching strategy by integrating Hibernate Second-Level cache with Redis. "
             + "By using a centralized cache provider, this research demonstrates how to maintain data consistency across "
             + "all application instances while drastically reducing direct database hits and improving overall system response time.",
 
         tasks: [
             "Researched and implemented Redisson as the Hibernate Region Factory provider",
-            "Configured Hibernate second-Level (L2) Cache and Query cache for optimized data retrival",
+            "Configured Hibernate Second-Level (L2) Cache and Query cache for optimized data retrieval",
             "Applied 'READ_WRITE' cache concurrency strategy to balance performance and data integrity",
             "Orchestrated a distributed environment using Docker Compose with PostgreSQL and Redis containers",
             "Validated cache hits and misses through SQL log analysis and Redis CLI monitoring",
@@ -111,13 +111,12 @@ const projectData = {
         ],
         links: {
             github: "https://github.com/vinijf01/Spring-Boot-Cache-L2-and-Redis.git",
-            docs: "https://github.com/vinijf01/Spring-Boot-Cache-L2-and-Redis#readme"
+            docs: "https://github.com/vinijf01/Spring-Boot-Cache-L2-and-Redis#README"
         },
         images: [
+            { src: "images/projects/cache_l2/response_time_optimization_analysis.png", title: "Response Time Optimization Analysis." },
             { src: "images/projects/cache_l2/hibernate_l2_cache_hit_verification.png", title: "Hibernate L2 Cache Hit Verification." },
             { src: "images/projects/cache_l2/cache_state_in_redis.png", title: "Distributed Cache State in Redis." },
-            { src: "images/projects/cache_l2/redis-cli-proof.png", title: "Redis CLI Verification: Distributed Cache State." },
-            { src: "images/projects/cache_l2/project-structure.png", title: "Project Architecture & Configuration." }
         ]
     },
     dss: {

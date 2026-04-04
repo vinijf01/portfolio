@@ -38,7 +38,7 @@ document.querySelectorAll(".project-card").forEach(card => {
             </div>
             <div class="ref-content">
                 <h5>GitHub Repository</h5>
-                <p>Source code of the custom SonarQube plugin and rule implementation.</p>
+                <p>Explore the complete source code, project structure, and implementation details on GitHub.</p>
                 <a href="${project.links.github}" target="_blank">
                     View Repository →
                 </a>
@@ -55,7 +55,7 @@ document.querySelectorAll(".project-card").forEach(card => {
             </div>
             <div class="ref-content">
                 <h5>Documentation</h5>
-                <p>Rule explanation, configuration steps, and usage guidelines.</p>
+                <p>Detailed technical documentation including setup instructions, configuration, and usage guides.</p>
                 <a href="${project.links.docs}" target="_blank">
                     Read Documentation →
                 </a>
